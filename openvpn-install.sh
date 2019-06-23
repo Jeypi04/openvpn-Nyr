@@ -428,7 +428,7 @@ function installQuestions () {
 				esac
 			;;	
 		esac
-		done
+		
 	fi
 	echo ""
 	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now."
