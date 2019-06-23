@@ -331,9 +331,16 @@ function installQuestions () {
 	echo "Note that whatever you choose, all the choices presented in the script are safe. (Unlike OpenVPN's defaults)"
 	echo "See https://github.com/angristan/openvpn-install#security-and-encryption to learn more."
 	echo ""
-	if	[[ $CUSTOMIZE_ENC =~ (y|n) ]]; do
+	until [[ $CUSTOMIZE_ENC =~ (y|n) ]]; do
 		read -rp "Customize encryption settings? [y/n]: " -e -i n CUSTOMIZE_ENC
 	done
+	if [[ $CUSTOMIZE_ENC == "n" ]];then
+		# Use default, sane and fast parameters
+		CERT_TYPE="1" # ECDSA
+		CERT_CURVE="prime256v1"
+		DH_TYPE="1" # ECDH
+		DH_CURVE="prime256v1"
+	else
 		echo ""
 		echo "Choose what kind of certificate you want to use:"
 		echo "   1) ECDSA (recommended)"
