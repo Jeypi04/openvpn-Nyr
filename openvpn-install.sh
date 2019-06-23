@@ -324,8 +324,6 @@ function installQuestions () {
 			COMPRESSION_ALG="lzo"
 			;;
 		esac
-	fi
-	
 		echo ""
 		echo "Choose what kind of certificate you want to use:"
 		echo "   1) ECDSA (recommended)"
@@ -428,8 +426,8 @@ function installQuestions () {
 				esac
 			;;	
 		esac
-		
-	fi	
+	fi
+	
 	echo ""
 	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now."
 	echo "You will be able to generate a client at the end of the installation."
