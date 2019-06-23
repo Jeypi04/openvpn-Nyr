@@ -428,9 +428,11 @@ function installQuestions () {
 				esac
 			;;	
 		esac
-		echo ""
-		echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now."
-		echo "You will be able to generate a client at the end of the installation."
+		
+	fi	
+	echo ""
+	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now."
+	echo "You will be able to generate a client at the end of the installation."
 	APPROVE_INSTALL=${APPROVE_INSTALL:-n}
 	if [[ $APPROVE_INSTALL =~ n ]]; then
 		read -n1 -r -p "Press any key to continue..."
