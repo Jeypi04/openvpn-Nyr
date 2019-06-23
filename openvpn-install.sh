@@ -324,6 +324,16 @@ function installQuestions () {
 			COMPRESSION_ALG="lzo"
 			;;
 		esac
+	fi
+	echo ""
+	echo "Do you want to customize encryption settings?"
+	echo "Unless you know what you're doing, you should stick with the default parameters provided by the script."
+	echo "Note that whatever you choose, all the choices presented in the script are safe. (Unlike OpenVPN's defaults)"
+	echo "See https://github.com/angristan/openvpn-install#security-and-encryption to learn more."
+	echo ""
+	if	[[ $CUSTOMIZE_ENC =~ (y|n) ]]; do
+		read -rp "Customize encryption settings? [y/n]: " -e -i n CUSTOMIZE_ENC
+	done
 		echo ""
 		echo "Choose what kind of certificate you want to use:"
 		echo "   1) ECDSA (recommended)"
