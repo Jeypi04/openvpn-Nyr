@@ -426,6 +426,7 @@ function installQuestions () {
 						DH_KEY_SIZE="4096"
 					;;
 				esac
+				done
 	fi
 	echo ""
 	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now."
